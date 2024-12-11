@@ -1,0 +1,165 @@
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Заголовок */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header .logo a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.nav {
+    margin-top: 10px;
+}
+
+.nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+/* Основной контент */
+main {
+    display: flex;
+    padding: 20px;
+}
+
+/* Боковая панель */
+.sidebar {
+    width: 20%;
+    background-color: #fff;
+    padding: 20px;
+    margin-right: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
+.sidebar ul {
+    padding-left: 20px;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Контентная часть */
+.content {
+    width: 75%;
+}
+
+/* Введение */
+.introduction, .latest-posts, .chat {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+/* Статьи */
+.post {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.post-info {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Чат */
+.chat-box {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-messages {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    padding-right: 10px;
+}
+
+.chat-message {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.chat-input {
+    display: flex;
+}
+
+.chat-input input {
+    width: 80%;
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+.chat-input button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background-color: #555;
+}
+
+/* Подвал */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

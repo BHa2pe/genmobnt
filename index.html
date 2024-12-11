@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENMO - Платформа для общения</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    <style>
+        /* Стилизация */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        form input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .post {
+            background-color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 id="pageTitle">Добро пожаловать на GENMO</h1>
+    <nav>
+        <a href="javascript:void(0);" onclick="showPage('home')">Главная</a>
+        <a href="javascript:void(0);" onclick="showPage('login')">Войти</a>
+        <a href="javascript:void(0);" onclick="showPage('register')">Зарегистрироваться</a>
+    </nav>
+</header>
+
+<main id="mainContent">
+    <!-- Главная страница -->
+    <section id="homePage">
+        <h2>Что такое GENMO?</h2>
+        <p>Genmo — это популярная платформа для обсуждений и обмена контентом, которая состоит из множества сообществ, называемых "сабреддитами". Каждый сабреддит посвящён определённой теме, например, новостям, науке, технологиям, кино, мемам и многому другому. Пользователи могут публиковать текстовые посты, ссылки, фотографии и видео, а другие пользователи могут комментировать их и голосовать за или против (с помощью кнопок "Upvote" и "Downvote").
+
+Ключевые особенности Genmo:
+1. **Сабреддиты** — это тематические разделы.
+2. **Голосование** — пользователи могут оценивать посты и комментарии. Позитивные голосования (upvote) повышают видимость контента, негативные (downvote) снижают.
+3. **Комментарии** — каждый пост можно комментировать, создавая дискуссии и обмен мнениями.
+4. **Анонимность** — пользователи могут создать аккаунт с минимальной информацией, что способствует большей анонимности.
+5. **Карма** — это система рейтингов, которая отражает популярность и активность пользователя на платформе, в зависимости от того, сколько голосов получили его посты и комментарии.
+
+Genmo известен своей демократичной системой, где мнения большинства имеют влияние, а также своей уникальной культурой мемов и шуток.</p>
+    </section>
+
+    <!-- Страница входа -->
+    <section id="loginPage" class="hidden">
+        <h2>Войти в GENMO</h2>
+        <form id="loginForm">
+            <label for="loginUsername">Имя пользователя</label>
+            <input type="text" id="loginUsername" name="username" required>
+
+            <label for="loginPassword">Пароль</label>
+            <input type="password" id="loginPassword" name="password" required>
+
+            <button type="submit">Войти</button>
+        </form>
+    </section>
+
+    <!-- Страница регистрации -->
+    <section id="registerPage" class="hidden">
+        <h2>Зарегистрироваться на GENMO</h2>
+        <form id="registerForm">
+            <label for="registerUsername">Имя пользователя</label>
+            <input type="text" id="registerUsername" name="username" required>
+
+            <label for="registerEmail">Электронная почта</label>
+            <input type="email" id="registerEmail" name="email" required>
+
+            <label for="registerPassword">Пароль</label>
+            <input type="password" id="registerPassword" name="password" required>
+
+            <label for="registerConfirmPassword">Подтверждение пароля</label>
+            <input type="password" id="registerConfirmPassword" name="confirmPassword" required>
+
+            <button type="submit">Зарегистрироваться</button>   
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 GENMO. Все права защищены.</p>
+</footer>
+
+<script>
+    // Функция для отображения нужной страницы
+    function showPage(page) {
+        // Скрываем все страницы
+        document.getElementById('homePage').classList.add('hidden');
+        document.getElementById('loginPage').classList.add('hidden');
+        document.getElementById('registerPage').classList.add('hidden');
+
+        // Показываем нужную страницу
+        if (page === 'home') {
+            document.getElementById('homePage').classList.remove('hidden');
+            document.getElementById('pageTitle').textContent = 'Добро пожаловать на GENMO';
+        } else if (page === 'login') {
+            document.getElementById('loginPage').classList.remove('hidden');
+            document.getElementById('pageTitle').textContent = 'Войти в GENMO';
+        } else if (page === 'register') {
+            document.getElementById('registerPage').classList.remove('hidden');
+            document.getElementById('pageTitle').textContent = 'Зарегистрироваться на GENMO';
+        }
+    }
+
+    // Простейшая валидация для формы регистрации
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Останавливаем отправку формы
+
+        const password = document.getElementById('registerPassword').value;
+        const confirmPassword = document.getElementById('registerConfirmPassword').value;
+
+        console.log('Пароль:', password);
+        console.log('Подтверждение пароля:', confirmPassword);
+
+        if (password !== confirmPassword) {
+            alert('Пароли не совпадают!');
+        } else {
+            console.log('Пароли совпадают!');
+            // Перенаправление на tron.html после успешной регистрации
+            window.location.href = 'tron.html';
+        }
+    });
+
+
+
+    // По умолчанию отображаем главную страницу
+    showPage('home');
+</script>
+
+    <script>
+        // Логика для формы входа
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Предотвращаем отправку формы
+
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Здесь нужно добавить свою логику авторизации
+            // Для примера, если имя пользователя и пароль совпадают с тестовыми данными
+            if (username === 'test' && password === '123') {
+                // Если авторизация успешна, перенаправляем на tron.html
+                window.location.href = 'tron.html';
+            } else {
+                // Показать сообщение об ошибке
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+
+</body>
+</html>

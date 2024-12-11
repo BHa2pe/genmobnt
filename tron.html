@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENMO</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="#">GENMO</a>
+        </div>
+        <div class="nav">
+            <a href="tron.html">Главное</a>
+            <a href="popul.html">Популярное</a>
+            <a href="lenta.html">Лента</a>
+            <a href="#" onclick="window.location.href='index.html';">Выход</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="sidebar">
+            <h3>Категории:</h3>
+            <ul>
+                <li><a href="technology.html">Технологии</a></li>
+                <li><a href="science.html">Наука</a></li>
+                <li><a href="movies.html">Фильмы</a></li>
+                <li><a href="programming.html">Программирование</a></li>
+                <li><a href="entertainment.html">Развлекательное</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <section class="introduction">
+                <h2>Добро пожаловать на GENMO!</h2>
+                <p>GENMO — это место, где вы можете найти самые актуальные новости и обсуждения по таким темам, как технологии, наука, фильмы, программирование и развлечения.</p>
+            </section>
+
+            <section class="latest-posts">
+                <h2>Последние статьи</h2>
+                
+                <!-- Пост 1 -->
+                <article class="post">
+                    <h3 class="post-title"><a href="#">Что нового в области искусственного интеллекта в этом месяце?</a></h3>
+                    <p class="post-info">Опубликовано в <a href="#">OpenAI</a> 10 минут назад.</p>
+                    <p>Искусственный интеллект продолжает развиваться с каждым днем. В этой статье мы обсудим последние достижения в области машинного обучения и нейронных сетей...</p>
+                </article>
+
+                <!-- Пост 2 -->
+                <article class="post">
+                    <h3 class="post-title"><a href="#">Удивительное открытие в квантовой физике!</a></h3>
+                    <p class="post-info">Опубликовано в <a href="#">ИНСТИТУТ ЯДЕРНОЙ ФИЗИКИ</a> 2 часа назад.</p>
+                    <p>В этой статье рассматриваются последние открытия в области квантовой физики, которые могут полностью изменить наше представление о мире...</p>
+                </article>
+
+                <!-- Пост 3 -->
+                <article class="post">
+                    <h3 class="post-title"><a href="#">10 лучших фильмов года!</a></h3>
+                    <p class="post-info">Опубликовано в <a href="#">КиноПоиск</a> 4 часа назад.</p>
+                    <p>Каждый год появляется множество новых фильмов, но какие из них стали по-настоящему культовыми? Узнайте, какие картины стоит посмотреть в этом году...</p>
+                </article>
+            </section>
+
+            <!-- Чат -->
+            <section class="chat">
+                <h2>Чат</h2>
+                <p>Обсуждайте различные темы с другими пользователями в чате.</p>
+
+                <div class="chat-box">
+                    <div class="chat-messages">
+                        <!-- Пример сообщений в чате -->
+                        <div class="chat-message">
+                            <strong>Иван:</strong> Привет, кто знает последние новости о развитии ИИ?
+                        </div>
+                        <div class="chat-message">
+                            <strong>Анна:</strong> Привет! Я читала статью о новых алгоритмах машинного обучения. Это очень интересно!
+                        </div>
+                        <div class="chat-message">
+                            <strong>Максим:</strong> Я думаю, что ИИ скоро сможет решать задачи, которые сейчас кажутся невозможными для обычных алгоритмов.
+                        </div>
+                    </div>
+
+                    <div class="chat-input">
+                        <input type="text" id="chat-message" placeholder="Введите ваше сообщение...">
+                        <button onclick="sendMessage()">Отправить</button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 GENMO. Все права защищены.</p>
+    </footer>
+
+    <script>
+        function sendMessage() {
+            const message = document.getElementById('chat-message').value;
+            if (message.trim() !== "") {
+                const chatMessages = document.querySelector('.chat-messages');
+                const newMessage = document.createElement('div');
+                newMessage.classList.add('chat-message');
+                newMessage.innerHTML = `<strong>Вы:</strong> ${message}`;
+                chatMessages.appendChild(newMessage);
+                document.getElementById('chat-message').value = '';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        }
+    </script>
+
+</body>
+</html>
